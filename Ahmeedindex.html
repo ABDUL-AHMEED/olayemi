@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<!-- Coding By Ahmeed - www.ahmeed.com -->
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ahmeed Login Page</title>
+    <link rel="stylesheet" href="Ahmeedindex.css">
+  </head>
+  <body>
+    <div class="container flex">
+      <div class="ahmeed-page flex">
+        <div class="text">
+          <h1>Ahmeed</h1>
+          <p>Connect with friends and the world</p>
+          <p>around you on Ahmeed.com.</p>
+        </div>
+        <form action="login.html" method="POST"> <!-- Added method="POST" for better security -->
+          <input type="email" placeholder="Email or phone number" required>
+          <input type="password" placeholder="Password" required>
+          <div class="link">
+            <button type="submit" class="login">Login</button> <!-- Fixed button issue -->
+            <a href="forgetpass.html" class="forgot">Forgot password?</a> <!-- Fixed relative path -->
+          </div>
+          <hr>
+          <div class="button">
+            <a href="file:///C:/Users/Alli/replit.doc/newahmeedsite.html">Create new account</a> <!-- Added a valid link -->
+          </div>
+        </form>
+      </div>
+    </div>
+    <script>
+      // Replace these with the specific valid email/phone and password
+      const validEmail = "olayemiahmeed422@gmail.com";
+      const validPassword = "Abdulahmeed8009";
+    
+      const form = document.querySelector("form");
+      form.addEventListener("submit", function(e) {
+        // Get the values from the inputs
+        const emailInput = document.querySelector("input[type='email']").value.trim();
+        const passwordInput = document.querySelector("input[type='password']").value;
+    
+        // Check if the entered values match the valid credentials
+        if (emailInput !== validEmail || passwordInput !== validPassword) {
+          e.preventDefault(); // Prevent form submission
+          alert("Invalid email/phone or password. Please try again.");
+        }
+      });
+    </script>
+    
+  </body>
+</html>
